@@ -1,0 +1,64 @@
+import Blotto.GeneralPaperEqualSelectedPreparationCapacity
+
+/-! The actual selected return joins complete measured preparation time,
+all defined preparation/closure phase observers at one uniform constructed
+word, complete returned-description/local capacity, expected draws/reads,
+completion, rational hard-budget outputs and continuous equilibrium.
+Cross-reference allocation and representation-operation pricing remain open. -/
+namespace Blotto.GeneralPaperEqualSelectedPreparationContract
+open MeasureTheory
+open GeneralPaperEqualInputDomain GeneralPaperEqualInputHeadline
+open GeneralPaperEqualSelectedSampler (traceLaw observed outputLaw realDecode)
+open GeneralPaperEqualSelectedPreparationResources
+open scoped ENNReal
+set_option autoImplicit false
+set_option maxHeartbeats 2400000
+set_option maxRecDepth 8192
+
+theorem all_phase_capacity (model : RationalCostModel) (hFast : GeneralPaperFastRationalModel.IsFast model) :
+    ∃ K : ℕ, 1 ≤ K ∧ ∀ (p : Input model) (phase : Phase model (word K p) p),
+      window model (word K p) K p phase < 2 ^ word K p := by
+  obtain ⟨K,hK,hSafe⟩ := GeneralPaperEqualSelectedPreparationCapacity.uniform_capacity model hFast
+  refine ⟨K,hK,fun p phase => ?_⟩
+  obtain ⟨hW,hIndex⟩ := GeneralPaperEqualDispatchContract.constructed_index_word K hK p
+  exact (all_phases model _ K p hW hIndex phase).trans_lt (hSafe p)
+
+theorem paper_time_space_and_returned_draw (model : RationalCostModel)
+    (hFast : GeneralPaperFastRationalModel.IsFast model) :
+    ∃ K At et As es : ℕ, 1 ≤ K ∧ ∀ p : Input model,
+      let W := word K p
+      let result := GeneralPaperEqualSelectedPipeline.run model W K p
+      let a := result.1
+      result.2 ≤ At * inputSize p * (paperLog p) ^ et ∧
+      (∀ phase : Phase model W p,
+        window model W K p phase ≤ As * inputSize p * (paperLog p) ^ es ∧
+        window model W K p phase < 2 ^ W) ∧
+      GeneralPaperEqualSelectedDescription.footprint a ≤
+        2 * GeneralPaperEqualDescriptionRates.paperBound p.n p.k (rationalWordWidth p.budget) ∧
+      GeneralPaperEqualSelectedDescription.footprint a < 2 ^ a.address ∧
+      (∫⁻ trace, ((observed model a trace).work : ℝ≥0∞) ∂(traceLaw a : Measure (GeneralPaperEqualBitBranchDraw.Trace a.branch))) ≤
+        (GeneralPaperEqualSelectedDraw.workBound model p.n p.k (rationalWordWidth p.budget) : ℝ≥0∞) ∧
+      (∫⁻ trace, ((observed model a trace).reads : ℝ≥0∞) ∂(traceLaw a : Measure (GeneralPaperEqualBitBranchDraw.Trace a.branch))) ≤
+        (GeneralPaperEqualSelectedDraw.readsBound p.n p.k : ℝ≥0∞) ∧
+      (traceLaw a).map (realDecode model a) = outputLaw model a ∧
+      (∀ᵐ trace ∂(traceLaw a : Measure (GeneralPaperEqualBitBranchDraw.Trace a.branch)),
+        ∃ row, (observed model a trace).output = some row) ∧
+      (0 ≤ p.budget → ∀ trace row, (observed model a trace).output = some row →
+        FullBudget (p.budget : ℝ) row.realAllocation ∧
+          ∀ j, RationalHeight (row.allocation j)
+            (33554432 * (rationalWordWidth p.budget + binaryWordWidth p.n + p.k + 10))) ∧
+      (epsilon p < 1 → 0 < p.budget →
+        Supported (p.budget : ℝ) (outputLaw model a) ∧
+        regret p.selector.values (p.budget : ℝ) (outputLaw model a) (outputLaw model a) ≤ (epsilon p : ℝ)) := by
+  obtain ⟨K,hK,hSafe⟩ := GeneralPaperEqualSelectedPreparationCapacity.uniform_capacity model hFast
+  obtain ⟨At,et,hReturn⟩ := GeneralPaperEqualSelectedContract.paper_time_and_returned_draw model hFast K
+  obtain ⟨As,es,hSpace⟩ := transfer_rate (GeneralPaperEqualSelectedPreparationCapacity.profile_rate model hFast K)
+  refine ⟨K,At,et,As,es,hK,fun p => ?_⟩
+  obtain ⟨ht,hDesc,hCapacity,hWork,hReads,hLaw,hAE,hOutput,hEq⟩ := hReturn p
+  refine ⟨ht,?_,hDesc,hCapacity,hWork,hReads,hLaw,hAE,hOutput,hEq⟩
+  intro phase
+  obtain ⟨hW,hIndex⟩ := GeneralPaperEqualDispatchContract.constructed_index_word K hK p
+  have hs := all_phases model _ K p hW hIndex phase
+  exact ⟨hs.trans (hSpace p),hs.trans_lt (hSafe p)⟩
+
+end Blotto.GeneralPaperEqualSelectedPreparationContract

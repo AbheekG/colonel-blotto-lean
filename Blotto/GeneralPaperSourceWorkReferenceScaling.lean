@@ -1,0 +1,57 @@
+import Blotto.GeneralPaperSourcePreparedPairOwnerRates
+
+/-! Positive reference-word scaling of the actual complete source and
+rational-row work majorant. Every original price term is retained. No
+runtime census, replay, changed trajectory or supplied ceiling is used. -/
+namespace Blotto.GeneralPaperSourceWorkReferenceScaling
+open GeneralPaperReferenceScaling GeneralPaperCodeAlphabet
+set_option autoImplicit false
+set_option maxHeartbeats 3000000
+set_option maxRecDepth 16384
+
+theorem source_work (C d m k Qv : ℕ) : Scale
+    (fun W => GeneralPaperSourceRowsCallerStorageRates.sourceWorkCap C d W m k Qv) := by
+  dsimp only [GeneralPaperSummaryArrayExecution.arrayWord,GeneralPaperForestInitialPrice.profile,GeneralPaperGeometricSourcePrice.initialProfile,
+    GeneralPaperRangeUpdateBitPrice.nodeProfile,GeneralPaperBatchUpdateBitPrice.rootProfile,GeneralPaperBatchUpdateBitPrice.entryProfile,
+    GeneralPaperCellInstructionPrice.profile,GeneralPaperEpochNodeUpdate.profile,GeneralPaperForestUpdatePrice.familyProfile,
+    GeneralPaperForestUpdatePrice.profile,GeneralPaperEpochZeroArrayPrice.profile,GeneralPaperEpochFieldInitialPrice.profile,
+    GeneralPaperEpochInitialFamilyPrice.profile,GeneralPaperEpochNumeratorArrayPrice.elementProfile,GeneralPaperEpochNumeratorArrayPrice.profile,
+    GeneralPaperEpochPrefixPrice.profile,GeneralPaperEpochSnapshotPrice.blockProfile,GeneralPaperEpochSnapshotPrice.profile,
+    GeneralPaperEpochSnapshotFamilyPrice.profile,GeneralPaperMeshQueryEnvelope.profile,GeneralPaperMeshQueryMetadata.referenceWord,
+    GeneralPaperCachedMeshIntervalQuery.profile,GeneralPaperCachedMeshIntervalQuery.cachedProfile,GeneralPaperMeshPairPrice.tailsProfile,
+    GeneralPaperNativeProfitLeafPrice.elementProfile,GeneralPaperNativeProfitLeafPrice.profile,GeneralPaperNativeProfitFieldsPrice.profile,
+    GeneralPaperProfitTreePreparation.bitProfile,GeneralPaperFastNativeSelectorPrice.preparationProfile,GeneralPaperCachedProfitGridPrice.profile,
+    GeneralPaperDPTableControls.emptyProfile,GeneralPaperDPTableControls.labelsProfile,GeneralPaperOrderedDPAggregatePrice.leafBase,
+    GeneralPaperOrderedDPAggregatePrice.mergeBase,GeneralPaperFastOrderedDPPrice.fieldProfile,GeneralPaperFastRootPrice.selectionProfile,
+    GeneralPaperFastRootPrice.profile,GeneralPaperRowTrimPrice.word,GeneralPaperRowTrimPrice.profile,
+    GeneralPaperFastNativeSelectorPrice.profile,GeneralPaperZeroRowPrice.profile,GeneralPaperFastNativeSelectorPrice.pickProfile,
+    GeneralPaperRoundPrefixViews.familyProfile,GeneralPaperRoundPrefixViews.profile,GeneralPaperFastChooseRowsPrice.profile,
+    GeneralPaperEpochLevelPrice.profile,GeneralPaperFieldAdvanceEnvelope.profile,GeneralPaperCachedMeshPrefixQuery.profile,
+    GeneralPaperCachedMeshPrefixQuery.cachedProfile,GeneralPaperSignedDeltaStepPrice.profile,GeneralPaperDeltaArrayPrice.signedProfile,
+    GeneralPaperMeshPairPrice.cdfProfile,GeneralPaperMeshPairPrice.countsProfile,GeneralPaperUnsignedDeltaStepPrice.profile,
+    GeneralPaperDeltaArrayPrice.unsignedProfile,GeneralPaperFieldDeltaPrice.uniformProfile,GeneralPaperFieldUpdateExecution.profile,
+    GeneralPaperRoundFieldsPrice.profile,GeneralPaperSelectedRowCodesPrice.profile,GeneralPaperSelectorRefinedSourcePrice.roundProfile,
+    GeneralPaperSelectorRefinedSourcePrice.localProfile,GeneralPaperCachedCatalogueFamily.entriesProfile,GeneralPaperCatalogueSlotsPrice.profile,
+    GeneralPaperDecoderControls.controlWord,GeneralPaperCellCataloguePrice.queryProfile,GeneralPaperCellCataloguePrice.profile,
+    GeneralPaperCachedCataloguePrice.finishProfile,GeneralPaperCataloguePointPrice.profile,GeneralPaperPricedSort.profile,
+    GeneralPaperNaturalOrderPrice.profile,GeneralPaperBoundaryCellPrice.profile,GeneralPaperPartitionAssemblyPrice.profile,
+    GeneralPaperPartitionPrice.profile,GeneralPaperCataloguePartitionPrice.profile,GeneralPaperCachedCataloguePrice.profile,
+    GeneralPaperCachedCatalogueFamily.profile,GeneralPaperCatalogueProjection.rowProfile,GeneralPaperCatalogueProjection.familyProfile,
+    GeneralPaperCatalogueProjection.profile,GeneralPaperCatalogueArraysExecution.profile,GeneralPaperCatalogueTagFamily.rowProfile,
+    GeneralPaperCatalogueTagFamily.profile,GeneralPaperRankArrayPrice.queryProfile,GeneralPaperRankArrayPrice.profile,
+    GeneralPaperSignedCutPrice.profile,GeneralPaperSignedTailPrice.profile,GeneralPaperOptionPlanFamily.profile,
+    GeneralPaperCatalogueOptimizerPreparation.profile,GeneralPaperCellRepresentativePrice.profile,GeneralPaperEpochPointPrice.profile,
+    GeneralPaperEpochPartitionPrice.profile,GeneralPaperSignedCellExtrasPrice.profile,GeneralPaperSignedCellPositionsPrice.profile,
+    GeneralPaperSignedCellPartitionPrice.profile,GeneralPaperCDFShiftPrice.profile,GeneralPaperSignedPositionsPrice.profile,
+    GeneralPaperSignedUpdatePrice.profile,GeneralPaperCellPlanPrice.signedProfile,GeneralPaperCDFPairPrice.profile,
+    GeneralPaperQueryLossPrice.profile,GeneralPaperUnsignedCellInputPrice.profile,GeneralPaperUnsignedCellPartitionPrice.profile,
+    GeneralPaperCellPlanPrice.unsignedProfile,GeneralPaperFieldPlanPreparation.profile,GeneralPaperFieldPlanFamily.profile,
+    GeneralPaperEpochCachePreparation.profile,GeneralPaperQuantileSearchPrice.profile,GeneralPaperSummaryArrayPrice.profile,
+    GeneralPaperSummaryFamilyPrice.profile,GeneralPaperFourSummaryArrays.profile,GeneralPaperTreeEpochPreparation.profile,
+    GeneralPaperSelectorRefinedSourcePrice.outerProfile,GeneralPaperTrajectoryAppendPrice.profile,GeneralPaperSelectorRefinedSourcePrice.stepProfile,
+    GeneralPaperSelectorRefinedSourcePrice.profile,GeneralPaperFastSourceMajorant.profile,GeneralPaperRowBudgetExecution.bitProfile,
+    GeneralPaperClosedBidExecution.bitProfile,GeneralPaperSourceRowsExecution.rowBitProfile,GeneralPaperSourceRowsExecution.bitProfile,
+    GeneralPaperSourceRowsDriver.bitProfile,GeneralPaperSourceRowsCallerStorageRates.sourceWorkCap]
+  fun_prop (maxSteps := 4000)
+
+end Blotto.GeneralPaperSourceWorkReferenceScaling

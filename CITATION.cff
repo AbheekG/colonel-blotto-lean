@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying paper and this repository when using this formalization."
+title: "Lean formalization of Efficient Equilibrium Computation in Colonel Blotto Games"
+type: software
+authors:
+  - family-names: Ghosh
+    given-names: Abheek
+repository-code: "https://github.com/AbheekG/colonel-blotto-lean"
+url: "https://github.com/AbheekG/colonel-blotto-lean"
+version: 0.1.0

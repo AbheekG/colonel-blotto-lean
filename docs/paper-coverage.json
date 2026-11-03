@@ -1,0 +1,279 @@
+{
+  "named_statement_count": 18,
+  "auxiliary_claims": {
+    "general_minimax_paper_proof": [
+      "Blotto.RichSmoothingApproximation.exists_regular_approximation",
+      "Blotto.RichSmoothingLaw.regular_expected_continuous",
+      "Blotto.UnitSecurityMinimax.lossInfimum_sum_eq_one"
+    ],
+    "general_minimax_alternative_route": [
+      "Blotto.GeneralPaperTieFreeApproachability.exists_tie_free_local_approach",
+      "Blotto.GeneralPaperRegularDensity.atomless_fullBudget_dense"
+    ],
+    "general_existence_theorem_counterexample": [
+      "Blotto.GeneralPaperSecurityCounterexampleTopology.security_obstructions",
+      "Blotto.GeneralPaperSecurityCounterexample.dominant_is_pure_equilibrium"
+    ],
+    "player_specific_finite_bit_source_bounds": [
+      "Blotto.PlayerSpecificFiniteSamplerUnconditionalPaperContract.finite_bit_contract",
+      "Blotto.PlayerSpecificFiniteSamplerCostEnvelope.accepted_cost",
+      "Blotto.PlayerSpecificFiniteSamplerCostEnvelope.accepted_random_bits"
+    ]
+  },
+  "definitions": {
+    "X(c), allocations spending at most c (sec:prelim)": [
+      "Blotto.Feasible"
+    ],
+    "allocations spending exactly c": [
+      "Blotto.FullBudget"
+    ],
+    "positive values summing to one": [
+      "Blotto.Values"
+    ],
+    "h(s,t), half share of every tie including zero": [
+      "Blotto.share"
+    ],
+    "u_A, u_B (eq:prelim:payoffs); u_B(x,y) = payoff v y x": [
+      "Blotto.payoff",
+      "Blotto.payoff_constant_sum"
+    ],
+    "mixed strategy on X(c)": [
+      "Blotto.Mixed",
+      "Blotto.Supported"
+    ],
+    "u_j(x, mu) and u_j(mu_A, mu_B) for independent players": [
+      "Blotto.purePayoff",
+      "Blotto.expected"
+    ],
+    "Reg_A, Reg_B (eq:prelim:regret)": [
+      "Blotto.regret"
+    ],
+    "U(mu; c), supremum over pure deviations": [
+      "Blotto.security"
+    ],
+    "eq:prelim:security-sum": [
+      "Blotto.regret_sum",
+      "Blotto.regrets_le_of_security_sum"
+    ],
+    "full-budget deviations suffice": [
+      "Blotto.full_spending_transfer"
+    ],
+    "F_{mu,i}, F(s-), and d(mu,nu) <= delta": [
+      "Blotto.closedCDF",
+      "Blotto.strictCDF",
+      "Blotto.CDFClose"
+    ],
+    "eq:prelim:half-tie": [
+      "Blotto.marginal_integral_share"
+    ],
+    "Unif[0,l] and (1-p) delta_0 + p Unif[0,l]": [
+      "Blotto.uniformLaw",
+      "Blotto.zeroUniformLaw"
+    ],
+    "eq:prg:promise and eq:prg:marginals": [
+      "Blotto.PRGInput",
+      "Blotto.PRGInput.richLaw_marginal",
+      "Blotto.PRGInput.poorLaw_marginal"
+    ],
+    "eq:prg:specific-marginals": [
+      "Blotto.PlayerSpecificMarginals.length",
+      "Blotto.PlayerSpecificMarginals.probA",
+      "Blotto.PlayerSpecificMarginals.probB"
+    ],
+    "eq:prg:specific-promise": [
+      "Blotto.PlayerSpecificRecognition.ValidParameters"
+    ],
+    "C_1 and C_rho (sec:general:source)": [
+      "Blotto.ContinuousSecurityValues.lossInfimum"
+    ],
+    "closed and open choices, eq:general:affordable": [
+      "Blotto.GeneralPaperFieldThresholdChoices.Thresholds",
+      "Blotto.GeneralPaperFieldThresholdChoices.Makes",
+      "Blotto.GeneralPaperFieldThresholdChoices.Affordable"
+    ],
+    "grid-restricted game (prop:general:grid)": [
+      "Blotto.GeneralPaperGridMixtures.OnGrid",
+      "Blotto.GeneralPaperGridCanonicalResponses.GridEquilibrium"
+    ],
+    "real-RAM operations and exact uniform draws": [
+      "Blotto.PRGRealRAMExecution.Operation",
+      "Blotto.PRGRealRAMExecution.Run",
+      "Blotto.unitUniform",
+      "Blotto.RealUniformInputs.law"
+    ],
+    "fair coin flips": [
+      "Blotto.fairBitLaw"
+    ],
+    "Rat(W) and soft-linear rational arithmetic": [
+      "Blotto.RationalCostModel",
+      "Blotto.GeneralPaperFastRationalModel.Growth"
+    ]
+  },
+  "proof_method_notes": [
+    "The named general minimax equality is formalized by finite regular-response covers and separation, not a line-by-line Sion/Kneser-Fan invocation.",
+    "The named general candidate lemma uses whole-law quantile/rational order-cell compression instead of the manuscript probability-integral-transform presentation.",
+    "The Barelli-Govindan-Wilson paragraph is supported by an arbitrarily local tie-free payoff selector and weak density of atomless full-budget laws; these formalize its relevant mathematical conditions without importing that external theorem.",
+    "Polynomial cost claims use the paper-defined source arithmetic models. Generated-C allocator, refcount/GC and physical-stack behavior are outside those models.",
+    "Operation counts are traces or work functions written alongside each program; the kernel checks their bounds, while their correspondence to the program is by construction and was reviewed by inspection."
+  ],
+  "schema_version": 1,
+  "paper_title": "Efficient Equilibrium Computation in Colonel Blotto Games",
+  "reviewed_paper_source_sha256": "fdb2e647514392c00ac9e617c0384f43ecd3ef65c2a2bb715cffb4c57cb5dce0",
+  "scope": "Paper statements and definitions mapped to formal declarations; English correspondence was reviewed separately.",
+  "named_statements": [
+    {
+      "label": "cor:prg:finite",
+      "endpoints": [
+        "Blotto.PaperPRGFiniteCorollary.paper_corollary",
+        "Blotto.PaperPRGFiniteCorollary.output_decodes",
+        "Blotto.PaperPRGContract.finite_contract",
+        "Blotto.PaperPRGDataSampler.accuracy_regrets"
+      ]
+    },
+    {
+      "label": "lem:general:candidates",
+      "endpoints": [
+        "Blotto.GeneralPaperUniversalCandidateComparator.finite_set_statement",
+        "Blotto.GeneralPaperProxyWidths.lambda_bound",
+        "Blotto.GeneralPaperCandidateBidSet.height"
+      ]
+    },
+    {
+      "label": "lem:general:endpoint",
+      "endpoints": [
+        "Blotto.GeneralPaperProxyClassifier.root_sound",
+        "Blotto.GeneralPaperProxyClassifier.root_none",
+        "Blotto.GeneralPaperProxyClassifier.proxy_unit",
+        "Blotto.GeneralPaperProxyClassifier.proxy_denominator",
+        "Blotto.GeneralPaperSourceBasisEndpoint.rich",
+        "Blotto.GeneralPaperSourceBasisEndpoint.poor",
+        "Blotto.GeneralPaperCheckedBasisEndpoint.accepted",
+        "Blotto.GeneralPaperNativeEndpointSourceJoin.source_contract",
+        "Blotto.GeneralPaperSourcePairSound.run_contract"
+      ]
+    },
+    {
+      "label": "lem:general:finite-shifts",
+      "endpoints": [
+        "Blotto.GeneralPaperContinuousFiniteShiftCDF.paper_finite_shifts",
+        "Blotto.GeneralPaperContinuousFiniteShiftCDF.center_row"
+      ]
+    },
+    {
+      "label": "lem:general:lift",
+      "endpoints": [
+        "Blotto.GeneralPaperContinuousCircleLaw.row_product_ae",
+        "Blotto.GeneralPaperContinuousCircleLaw.law_eq",
+        "Blotto.GeneralPaperContinuousCircleLaw.supported",
+        "Blotto.GeneralPaperContinuousLiftContract.security_bound",
+        "Blotto.GeneralPaperContinuousLiftContract.paper_lift"
+      ]
+    },
+    {
+      "label": "lem:general:minimax",
+      "endpoints": [
+        "Blotto.RichMinimax.lossInfimum_sum_eq_one",
+        "Blotto.UnitSecurityMinimax.lossInfimum_sum_eq_one"
+      ]
+    },
+    {
+      "label": "lem:general:responses",
+      "endpoints": [
+        "Blotto.GeneralPaperFieldThresholdAttainment.paper_response_lemma",
+        "Blotto.GeneralPaperFieldThresholdAttainment.security_attained_choice"
+      ]
+    },
+    {
+      "label": "lem:general:source",
+      "endpoints": [
+        "Blotto.GeneralPaperCatalogueFullTrajectory.read_preupdate",
+        "Blotto.GeneralPaperCatalogueFullTrajectory.every_row_feasible",
+        "Blotto.GeneralPaperCataloguePairedSecurity.paper_source",
+        "Blotto.GeneralPaperSourceRowsSharpContract.native_paper_time",
+        "Blotto.GeneralPaperSharpSourceSpaceContract.paper_models_space_and_capacity"
+      ]
+    },
+    {
+      "label": "lem:general:transfer",
+      "endpoints": [
+        "Blotto.GeneralPaperStrictScore.endpoint_security_bound",
+        "Blotto.GeneralPaperStrictScore.empty_bad_security_bound",
+        "Blotto.GeneralPaperSourcePairSound.run_contract",
+        "Blotto.GeneralPaperSourcePairSound.paired_security"
+      ]
+    },
+    {
+      "label": "lem:general:updates",
+      "endpoints": [
+        "Blotto.GeneralPaperFourLossAlgebra.cancellation",
+        "Blotto.GeneralPaperCatalogueGlobalRegret.average_regret",
+        "Blotto.GeneralPaperCatalogueGlobalRegret.regret_with_optimizer_slack",
+        "Blotto.GeneralPaperCatalogueGlobalOptimizer.optimality",
+        "Blotto.GeneralPaperCatalogueFullTrajectory.every_row_feasible",
+        "Blotto.GeneralPaperSourceRowsSharpContract.native_paper_time"
+      ]
+    },
+    {
+      "label": "lem:prelim:cdf",
+      "endpoints": [
+        "Blotto.both_regrets_stability",
+        "Blotto.purePayoff_close",
+        "Blotto.expected_opponent_close"
+      ]
+    },
+    {
+      "label": "lem:prg:four",
+      "endpoints": [
+        "Blotto.FourSpec.law_contract"
+      ]
+    },
+    {
+      "label": "lem:prg:nested",
+      "endpoints": [
+        "Blotto.NestedSpec.law_contract"
+      ]
+    },
+    {
+      "label": "lem:prg:three",
+      "endpoints": [
+        "Blotto.ThreeSpec.law_contract",
+        "Blotto.ThreeSpec.segmentLottery_law",
+        "Blotto.ThreeSpec.segmentLottery_positive"
+      ]
+    },
+    {
+      "label": "prop:general:grid",
+      "endpoints": [
+        "Blotto.GeneralPaperGridCounterexample.paper_proposition",
+        "Blotto.GeneralPaperGridCounterexample.nested_counterexamples",
+        "Blotto.GeneralPaperGridCounterexample.meshes_tend_to_zero"
+      ]
+    },
+    {
+      "label": "thm:general",
+      "endpoints": [
+        "Blotto.GeneralPaperFirstAlgorithmContract.actual_contract",
+        "Blotto.GeneralPaperOneFieldExact.bit_exact",
+        "Blotto.GeneralPaperOneFieldExact.real_exact"
+      ]
+    },
+    {
+      "label": "thm:prg:exact",
+      "endpoints": [
+        "Blotto.PaperPRGExactTheorem.paper_theorem",
+        "Blotto.PaperPRGRealInput.exact_contract"
+      ]
+    },
+    {
+      "label": "thm:prg:specific",
+      "endpoints": [
+        "Blotto.PlayerSpecificRealAlgorithm.actual_contract",
+        "Blotto.PlayerSpecificFiniteSamplerEveryDrawContract.finite_bit_contract",
+        "Blotto.PlayerSpecificFiniteSamplerUnconditionalPaperContract.finite_bit_contract",
+        "Blotto.PlayerSpecificFiniteParameterDescriptionContract.actual_contract",
+        "Blotto.PlayerSpecificFiniteSamplerCostEnvelope.accepted_cost",
+        "Blotto.PlayerSpecificFiniteSamplerCostEnvelope.accepted_random_bits"
+      ]
+    }
+  ]
+}
